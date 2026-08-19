@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alsaif/n8n-nodes-nushir.git"
+    "url": "git+https://github.com/alsaif/n8n-nodes-nushir.git"
   },
   "engines": {
     "node": ">=20.15"
   },
   "main": "index.js",
   "scripts": {
-    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "build": "npx rimraf dist node_modules/.cache/tsbuildinfo && tsc && gulp build:icons && npx rimraf dist/package.json",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
